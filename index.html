@@ -5,33 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArquiSketch — Planos de casas gratis (PDF & DWG)</title>
   <meta name="description" content="ArquiSketch: descarga planos de casas gratis en PDF y DWG. Ideal para estudiantes y profesionales. Interfaz simple y catálogo listo para usar.">
-  <meta name="theme-color" content="#0b6efd">
+  <meta name="theme-color" content="#1e293b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="jpg" href="logoApp.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fcfcfd;
-      --card: #ffffff;
-      --text: #0f1724;
-      --muted: #6b7280;
-      --accent: #0b6efd;
-      --accent-light: #3d8bfd;
-      --radius: 14px;
-      --max: 1100px;
-      --shadow: 0 6px 24px rgba(15,23,42,0.06);
-      --transition: all 0.3s ease;
-    }
-
-    [data-theme="dark"] {
       --bg: #0f1724;
       --card: #1e293b;
       --text: #f8fafc;
       --muted: #94a3b8;
       --accent: #3d8bfd;
       --accent-light: #0b6efd;
+      --radius: 14px;
+      --max: 1100px;
       --shadow: 0 6px 24px rgba(0,0,0,0.2);
+      --transition: all 0.3s ease;
     }
 
     * {
@@ -61,7 +51,6 @@
       justify-content: space-between;
       align-items: flex-start;
       padding: 16px 0;
-      position: relative;
     }
 
     .top {
@@ -87,12 +76,15 @@
       justify-content: center;
       background: #111827;
       flex-shrink: 0;
+      border: 2px solid #3d8bfd;
+      box-shadow: 0 0 10px rgba(61, 139, 253, 0.3);
     }
 
     .logo img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
+      border-radius: 8px;
     }
 
     .app-title h1 {
@@ -105,41 +97,6 @@
       margin: 4px 0 0;
       color: var(--muted);
       font-size: 14px;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle-container {
-      position: absolute;
-      top: 16px;
-      right: 0;
-    }
-
-    .theme-toggle {
-      background: var(--card);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 50px;
-      width: 60px;
-      height: 30px;
-      position: relative;
-      cursor: pointer;
-      transition: var(--transition);
-      flex-shrink: 0;
-    }
-
-    .theme-toggle::before {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--accent);
-      top: 3px;
-      left: 3px;
-      transition: var(--transition);
-    }
-
-    [data-theme="dark"] .theme-toggle::before {
-      transform: translateX(30px);
     }
 
     /* Hero Section */
@@ -182,12 +139,13 @@
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(11, 110, 253, 0.3);
+      box-shadow: 0 4px 12px rgba(61, 139, 253, 0.3);
     }
 
     .play-badge:hover {
       background: var(--accent-light);
       transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(61, 139, 253, 0.4);
     }
 
     .cta {
@@ -224,18 +182,20 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       transition: var(--transition);
+      border: 1px solid #334155;
     }
 
     .feature:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: var(--accent);
     }
 
     .feature .icon {
       width: 50px;
       height: 50px;
       border-radius: 12px;
-      background: rgba(11, 110, 253, 0.1);
+      background: rgba(61, 139, 253, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -271,6 +231,7 @@
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      border: 1px solid #334155;
     }
 
     .carousel {
@@ -338,11 +299,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 1px solid #334155;
     }
 
     .app-screen:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      border-color: var(--accent);
     }
 
     .app-screen img {
@@ -364,7 +327,7 @@
     footer {
       margin-top: 50px;
       padding-top: 30px;
-      border-top: 1px solid rgba(0,0,0,0.1);
+      border-top: 1px solid #334155;
       color: var(--muted);
       font-size: 14px;
       display: flex;
@@ -403,12 +366,6 @@
       .header {
         flex-direction: column;
         align-items: flex-start;
-      }
-      
-      .theme-toggle-container {
-        position: static;
-        margin-top: 15px;
-        align-self: flex-end;
       }
       
       footer {
@@ -475,9 +432,6 @@
           </div>
         </div>
       </div>
-      <div class="theme-toggle-container">
-        <div class="theme-toggle" id="themeToggle"></div>
-      </div>
     </header>
 
     <section class="hero">
@@ -539,7 +493,6 @@
       <h3>Catálogo de Planos</h3>
       <div class="carousel-container">
         <div class="carousel" id="carousel">
-          <!-- Aquí puedes agregar hasta 4 imágenes de 1024x658 -->
           <div class="carousel-item">
             <img src="plano7.png" alt="Planos de casas ArquiSketch">
           </div>
@@ -549,7 +502,6 @@
           <div class="carousel-item">
             <img src="plano8.png" alt="Detalles de planos">
           </div>
-          <!-- Agrega más imágenes según necesites -->
         </div>
         <div class="carousel-nav" id="carouselNav">
           <!-- Los puntos de navegación se generan automáticamente con JS -->
@@ -568,36 +520,15 @@
           <img src="Detalle.jpg" alt="Detalle de plano en ArquiSketch">
           <div class="app-screen-caption">Detalle de plano con especificaciones</div>
         </div>
-        <!-- Si agregas más imágenes, se adaptarán automáticamente -->
       </div>
     </section>
 
     <footer>
       <div>© 2025 ArquiSketch</div>
-      <!--<div>Hecho por un estudiante de arquitectura • <a href="mailto:tuemail@gmail.com">tuemail@gmail.com</a></div>-->
     </footer>
   </div>
 
   <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check for saved theme or prefered system theme
-    const currentTheme = localStorage.getItem('theme') || 
-                        (prefersDarkScheme.matches ? 'dark' : 'light');
-    
-    // Apply the theme
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    
-    // Toggle theme
-    themeToggle.addEventListener('click', function() {
-      let theme = document.documentElement.getAttribute('data-theme');
-      theme = theme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-    });
-
     // Carrusel functionality
     document.addEventListener('DOMContentLoaded', function() {
       const carousel = document.getElementById('carousel');
